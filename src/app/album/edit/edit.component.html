@@ -1,0 +1,29 @@
+
+<div class="container mt-5">
+    <h2>Create Album</h2>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+            <label for="">Id</label>
+            <input type="text" class="form-control" [ngModel]="album.id" name="id">
+        </div>
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" class="form-control" [ngModel]="album.name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="">Singer</label>
+            <input type="text" class="form-control" [ngModel]="album.singer" name="singer">
+        </div>
+        <div class="form-group">
+            <label for="">MusicDirector</label>
+            <input type="text" class="form-control" [ngModel]="album.musicdirector" name="musicdirector">
+        </div>
+        <div class="form-group">
+            <label for="">Lyricist</label>
+            <input type="text" class="form-control" [ngModel]="album.lyricist" name="lyricist">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>

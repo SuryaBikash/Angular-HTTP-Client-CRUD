@@ -1,0 +1,40 @@
+Album Details<br>
+<style>
+    table,th,td{
+        border: 1px solid black;
+    }
+</style>
+<span>{{error}}</span>
+<table class="table table-striped table-bordered" style="width:60%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Singer</th>
+            <th>MusicDirector</th>
+            <th>Lyricist</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let albm of albums">
+            <td>{{albm.id}}</td>
+            <td>{{albm.name}}</td>
+            <td>{{albm.singer}}</td>
+            <td>{{albm.musicdirector}}</td>
+            <td>{{albm.lyricist}}</td>
+            
+            <td><a [routerLink]="['album/edit', albm.id]">Edit</a>
+            <td><button (click)="deleteAlbum(albm.id)">Delete</button></td>
+           
+        </tr>
+    </tbody>
+</table><br>
+<form>
+    Name: <input type="text" [(ngModel)]="newAlbum.name" name="name"/><br>
+    Singer: <input type="text" [(ngModel)]="newAlbum.singer" name="name"/><br>
+    MusicDirector: <input type="text" [(ngModel)]="newAlbum.musicdirector" name="name"/><br>
+    Lyricist: <input type="text" [(ngModel)]="newAlbum.lyricist" name="name"/><br>
+    <input type="button" value="Add Album" name="addAlbum" (click)="addAlbum()"/>
+</form>
