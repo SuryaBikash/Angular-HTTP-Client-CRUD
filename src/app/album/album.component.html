@@ -25,7 +25,7 @@ Album Details<br>
             <td>{{albm.musicdirector}}</td>
             <td>{{albm.lyricist}}</td>
             
-            <td><a [routerLink]="['album/edit', albm.id]">Edit</a>
+            <td><a [routerLink]="['edit-album', albm.id]" [state]="{ id:1 , name:'Angular'}">Edit</a>
             <td><button (click)="deleteAlbum(albm.id)">Delete</button></td>
            
         </tr>
