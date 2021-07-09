@@ -4,8 +4,9 @@ import { AlbumComponent } from './album/album.component';
 import { EditComponent } from './album/edit/edit.component';
 
 const routes: Routes = [
-  {path: 'edit-album/id',component:EditComponent},
-  {path:'album/id',component:AlbumComponent}
+  {path: 'edit-album/:id',component:EditComponent},
+  {path:'album/id',component:AlbumComponent},
+  { path: '**', component: AlbumComponent },
 ];
 
 @NgModule({

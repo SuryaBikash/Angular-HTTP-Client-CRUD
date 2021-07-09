@@ -23,8 +23,13 @@ export class AlbumComponent implements OnInit {
     req.subscribe(albms=>this.albums=albms,err=>this.error=err);
   }
   addAlbum(){
-    var req=this.albumService.addAlbum(this.newAlbum);
-    req.subscribe(albm=>this.albums.push(albm),err=>this.error=err);
+    var req=this.albumService.addAlbum(this.newAlbum).subscribe(data=>{
+      //get album pojo in response and add it to table
+      data.id=this.albums.length+1;
+      this.albums.push(data);
+    })
+   // console.log("Add Album",req)
+   // req.subscribe(albm=>this.albums.push(albm),err=>this.error=err);
   }
   updateAlbum(){
     var req=this.albumService.updateAlbum(this.newAlbum);
